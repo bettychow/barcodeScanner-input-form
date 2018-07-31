@@ -1,7 +1,7 @@
 export const GET_ALL_UPC = 'GET_ALL_UPC'
 export const getAllUPC = () => {
   return async dispatch => {
-    const response = await fetch(`https://young-woodland-38521.herokuapp.com/upc`, {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/upc`, {
       method: 'GET',
       headers: {
         'Content-type': 'application/json',
@@ -23,7 +23,7 @@ export const DUPLICATE_UPC = 'DUPLICATE_UPC'
 export const addUPC = (product_name, upc) => {
  
   return async dispatch => {
-    const response = await fetch(`https://young-woodland-38521.herokuapp.com/upc`, {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/upc`, {
       method: 'POST',
       body: JSON.stringify({product_name, upc}),
       headers: {
